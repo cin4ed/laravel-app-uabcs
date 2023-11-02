@@ -37,6 +37,6 @@ Route::get('/hello/{name}/{lastname}', function(string $name, string $lastname) 
     return "Hello {$name} {$lastname}!";
 })->whereAlpha(['name', 'lastname']);
 
-Route::get('/greeting/{name}/{lastname}', function(string $name, string $lastname) {
+Route::get('/greeting/{name}/{lastname?}', function(string $name, ?string $lastname = '') {
     return view('greeting', ['name' => $name, 'lastname' => $lastname]);
 })->whereAlpha(['name', 'lastname']);
